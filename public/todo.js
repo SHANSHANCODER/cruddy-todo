@@ -6,6 +6,8 @@ window.Todo = {
   url: '/todo',
 
   // Create (Crud) -- collection
+  //might need to change the callback to somehow retrain the informaiton?
+
   create: function(text, callback) {
     return $.ajax({
       url: this.url,
@@ -37,6 +39,9 @@ window.Todo = {
   },
 
   // Update (crUd) -- member
+  /*      10) should not change the counter
+      11) should update the todo text for existing todo
+      */
   update: function(id, text, callback) {
     return $.ajax({
       url: `${this.url}/${id}`,
@@ -46,7 +51,7 @@ window.Todo = {
       success: callback
     });
   },
-
+  // 12) should not change the counter
   // Delete (cruD) -- member
   delete: function(id, callback) {
     return $.ajax({
